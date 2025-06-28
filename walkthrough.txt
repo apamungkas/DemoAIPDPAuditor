@@ -1,19 +1,32 @@
 az appservice plan create \
-  --name aipdpplan \
+  --name aiauditorplan \
   --resource-group rg-aipdp \
   --sku B1 \
   --is-linux
 
 az webapp create \
   --resource-group rg-aipdp \
-  --plan aipdpplan \
+  --plan aiauditorplan \
   --name aipdpauditor \
   --runtime "PYTHON|3.13" \
   --deployment-local-git
 
+Enable SCM basic auth in Azure Portal
+Set user & password
+
+az webapp deployment user set --user-name apamungkas --password "S1mpati#84017"
+curl -u apamungkas:S1mpati#84017 https://aipdpauditor.scm.azurewebsites.net/api/settings
+
+az webapp deployment list-publishing-profiles \
+  --name aipdpauditor \
+  --resource-group rg-aipdp \
+  --output json
+
+Add to webapp startup:
+streamlit run app.py --server.port=8000 --server.enableCORS=false
+
 git init
-git add .
-git commit -m "initial commit"
+git remote -v
 git remote add azure https://apamungkas@aipdpauditor.scm.azurewebsites.net/aipdpauditor.git
 
 git branch -M main
