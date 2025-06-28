@@ -14,8 +14,8 @@ az webapp create \
 Enable SCM basic auth in Azure Portal
 Set user & password
 
-az webapp deployment user set --user-name apamungkas --password "S1mpati#84017"
-curl -u apamungkas:S1mpati#84017 https://aipdpauditor.scm.azurewebsites.net/api/settings
+az webapp deployment user set --user-name apamungkas --password "pass"
+curl -u apamungkas:pass https://aipdpauditor.scm.azurewebsites.net/api/settings
 
 az webapp deployment list-publishing-profiles \
   --name aipdpauditor \
@@ -35,3 +35,4 @@ git commit -m "Update app with latest changes"
 git commit --allow-empty -m "Force redeploy"
 git push azure main:master
 
+git push -u origin main
