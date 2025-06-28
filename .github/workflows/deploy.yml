@@ -1,0 +1,34 @@
+name: Deploy to Azure App Service via ZipDeploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Zip the project
+      run: |
+        zip -r deploy.zip . -x "*.git*" -x "*__pycache__*" -x "*.venv*" -x "*.DS_Store"
+
+    - name: Deploy to Azure using Kudu ZipDeploy
+      run: |
+        curl -X POST "$AZURE_KUDU_URL" \
+        -u "$AZURE_KUDU_USERNAME:$AZURE_KUDU_PASSWORD" \
+        --data-binary @"deploy.zip" \
+        -H "Content-Type: application/zip"
