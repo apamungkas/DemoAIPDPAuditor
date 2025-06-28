@@ -70,3 +70,5 @@ if st.session_state.step < len(questions):
             st.rerun()
 else:
     st.success("🎉 Audit selesai! Terima kasih telah menggunakan AuditBot.")
+
+st.markdown('<div style="text-align:center; font-size:12px; color:gray; margin-top:2em;">- Demo by Angger Pamungkas -</div>', unsafe_allow_html=True)
