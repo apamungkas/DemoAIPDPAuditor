@@ -23,8 +23,8 @@ def load_questions():
     with open("audit_questions.json", "r") as f:
         return json.load(f)
 
-st.set_page_config(page_title="AuditBot UU PDP", layout="centered")
-st.title("🛡️ PatuhPDP - AuditBot UU Perlindungan Data Pribadi")
+st.set_page_config(page_title="AI Auditor UU PDP", layout="centered")
+st.title("🛡️ PatuhPDP - AI Auditor UU Perlindungan Data Pribadi")
 
 questions = load_questions()
 st.write(f"Loaded {len(questions)} questions.")

@@ -1,0 +1,24 @@
+az appservice plan create \
+  --name aipdpplan \
+  --resource-group rg-aipdp \
+  --sku B1 \
+  --is-linux
+
+az webapp create \
+  --resource-group rg-aipdp \
+  --plan aipdpplan \
+  --name aipdpauditor \
+  --runtime "PYTHON|3.13" \
+  --deployment-local-git
+
+git init
+git add .
+git commit -m "initial commit"
+git remote add azure https://apamungkas@aipdpauditor.scm.azurewebsites.net/aipdpauditor.git
+
+git branch -M main
+git add .
+git commit -m "Update app with latest changes"
+git commit --allow-empty -m "Force redeploy"
+git push azure main:master
+
