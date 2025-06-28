@@ -1,0 +1,4 @@
+AZURE_OPENAI_ENDPOINT = "https://aipdpfoundry.cognitiveservices.azure.com/"
+AZURE_OPENAI_API_KEY = "3a3cQ0UZlccc4RiJ8e33FVzT0oOh1Wzh4rV3jPN52418Ac0Bt0toJQQJ99BFACfhMk5XJ3w3AAAAACOGshxS"
+AZURE_DEPLOYMENT_NAME = "gpt-4o" 
+API_VERSION = "2024-12-01-preview"

@@ -1,0 +1,82 @@
+[
+  {
+    "pasal": "1",
+    "question": "Apakah organisasi Anda memiliki definisi yang jelas tentang Data Pribadi sesuai UU PDP?"
+  },
+  {
+    "pasal": "1",
+    "question": "Apakah peran Pengendali dan Prosesor Data Pribadi telah ditetapkan secara tertulis di organisasi?"
+  },
+  {
+    "pasal": "1",
+    "question": "Apakah organisasi memahami perbedaan antara subjek data, pengendali, dan prosesor?"
+  },
+  {
+    "pasal": "2",
+    "question": "Apakah organisasi Anda beroperasi di wilayah hukum Indonesia atau memproses data warga negara Indonesia?"
+  },
+  {
+    "pasal": "2",
+    "question": "Apakah organisasi memastikan tidak memproses data pribadi dalam konteks kegiatan pribadi/rumah tangga yang dikecualikan?"
+  },
+  {
+    "pasal": "3",
+    "question": "Apakah kebijakan organisasi Anda menjamin perlindungan data pribadi subjek?"
+  },
+  {
+    "pasal": "3",
+    "question": "Apakah setiap pemrosesan data dilakukan atas dasar kepastian hukum?"
+  },
+  {
+    "pasal": "3",
+    "question": "Apakah organisasi mempertimbangkan kepentingan umum dan kemanfaatan dalam kebijakan data?"
+  },
+  {
+    "pasal": "3",
+    "question": "Bagaimana organisasi menerapkan prinsip kehati-hatian dalam pemrosesan data?"
+  },
+  {
+    "pasal": "3",
+    "question": "Apakah ada mekanisme pertanggungjawaban yang jelas terhadap pelanggaran data?"
+  },
+  {
+    "pasal": "4",
+    "question": "Apakah organisasi mengklasifikasikan data pribadi berdasarkan kategori spesifik dan umum?"
+  },
+  {
+    "pasal": "4",
+    "question": "Apakah data spesifik (seperti biometrik, genetika, keuangan) diproses dengan perlakuan khusus dan pengamanan tambahan?"
+  },
+  {
+    "pasal": "4",
+    "question": "Apakah organisasi menyimpan dan memproses data anak dengan persetujuan orang tua atau wali?"
+  },
+  {
+    "pasal": "5",
+    "question": "Apakah organisasi memberikan kejelasan tujuan, dasar hukum, dan identitas pemroses saat mengumpulkan data pribadi?"
+  },
+  {
+    "pasal": "6",
+    "question": "Apakah pengguna dapat mengoreksi, melengkapi, atau memperbarui data pribadinya dengan mudah?"
+  },
+  {
+    "pasal": "7",
+    "question": "Apakah organisasi menyediakan mekanisme bagi pengguna untuk mengakses dan memperoleh salinan data pribadinya?"
+  },
+  {
+    "pasal": "8",
+    "question": "Apakah subjek data dapat mengajukan permintaan untuk menghapus atau menghentikan pemrosesan data miliknya?"
+  },
+  {
+    "pasal": "9",
+    "question": "Apakah tersedia sarana yang memudahkan subjek data untuk menarik kembali persetujuan yang sudah diberikan?"
+  },
+  {
+    "pasal": "10",
+    "question": "Apakah organisasi melakukan pengambilan keputusan otomatis (profiling)? Jika ya, apakah ada mekanisme keberatan?"
+  },
+  {
+    "pasal": "10",
+    "question": "Apakah pengguna diinformasikan bahwa data mereka digunakan untuk profiling otomatis?"
+  }
+]
