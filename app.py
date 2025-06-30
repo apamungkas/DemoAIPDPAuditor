@@ -3,6 +3,30 @@ import requests
 import streamlit as st
 from config import AZURE_OPENAI_ENDPOINT, AZURE_OPENAI_API_KEY, AZURE_DEPLOYMENT_NAME, API_VERSION
 
+# Simple Login System
+LOGIN_USERNAME = "demo"
+LOGIN_PASSWORD = "demo"
+
+def login():
+    st.title("Login - PatuhPDP AI Auditor")
+    st.info("Hint: Username: `demo` | Password: `demo`")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if username == LOGIN_USERNAME and password == LOGIN_PASSWORD:
+            st.session_state["authenticated"] = True
+            st.success("Login berhasil! Silakan lanjutkan audit.")
+            st.rerun()
+        else:
+            st.error("Username atau password salah.")
+
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
+
+if not st.session_state["authenticated"]:
+    login()
+    st.stop()
+
 # Call LLM
 def ask_openai(question, user_answer):
     url = f"{AZURE_OPENAI_ENDPOINT}openai/deployments/{AZURE_DEPLOYMENT_NAME}/chat/completions?api-version={API_VERSION}"
@@ -25,6 +49,14 @@ def load_questions():
 
 st.set_page_config(page_title="AI Auditor UU PDP", layout="centered")
 st.title("🛡️ PatuhPDP - AI Auditor UU Perlindungan Data Pribadi")
+
+if st.button("Logout", key="logout_btn"):
+    st.session_state["authenticated"] = False
+    st.session_state.step = 0
+    st.session_state.feedback = None
+    st.session_state.user_input = ""
+    st.session_state.warning = None
+    st.rerun()
 
 questions = load_questions()
 st.write(f"Loaded {len(questions)} questions.")
